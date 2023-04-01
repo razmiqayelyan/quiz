@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { useState } from 'react'
+import FirstPage from './components/FirstPage/FirstPage'
+import Quiz from './components/Quiz/Quiz'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { useEffect } from 'react';
 
-function App() {
+const App = () => {
+  const [quizStarted, setQuizStarted] = useState(false)
+  const [playerName, setPlayerName] = useState(null)
+  const [error, setError] = useState(null)
+
+
+  const getNameAndStartQuiz = (full_name) => {
+    if(!full_name || !full_name.trim()) return setError("Full name is empty, please fill it.")
+    setPlayerName(full_name)
+    setQuizStarted((res) => !res)
+  }
+
+  useEffect(() => {
+    if(error){
+      toast.error(error)
+      setTimeout(() => setError(null), 3000)
+    }
+  }, [error])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+        {quizStarted?  <Quiz playerName={playerName}  /> : <FirstPage getNameAndStartQuiz={getNameAndStartQuiz}  />}
+        <ToastContainer />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

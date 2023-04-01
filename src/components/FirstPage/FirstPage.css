@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Bakbak+One&family=Dancing+Script&display=swap');
+
+
+
+
+.first_page_main_div{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.welcome_page {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.form_part{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap:70px
+}
+
+.img_part{
+    margin-top: 50px;
+    height: 90%;
+    flex: 1;
+    background-image: url('./welcome_banner.png');
+    background-repeat: no-repeat;
+    background-size:contain;
+    
+}
+
+.form_input{
+    width: 100%;
+    height: 44px;
+    border: none;
+    border-bottom: 1px solid;
+    font-size: 1.5rem;
+}
+
+.welcome_text{
+    font-family: 'Bakbak One', cursive;
+    font-family: 'Dancing Script', cursive;
+}
+
+.form_input:focus{
+    border-bottom: 2px solid #2c387e;
+    outline: none;
+}
+
+.welcome_button {
+  appearance: button;
+  backface-visibility: hidden;
+  background-color: #405cf5;
+  border-radius: 6px;
+  border-width: 0;
+  box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset,rgba(50, 50, 93, .1) 0 2px 5px 0,rgba(0, 0, 0, .07) 0 1px 1px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  font-family: -apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Ubuntu,sans-serif;
+  font-size: 100%;
+  height: 44px;
+  line-height: 1.15;
+  margin: 12px 0 0;
+  outline: none;
+  overflow: hidden;
+  padding: 0 25px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  transform: translateZ(0);
+  transition: all .2s,box-shadow .08s ease-in;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 100%;
+}
+
+.welcome_button:disabled {
+  cursor: default;
+}
+
+.welcome_button:focus {
+  box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 4px;
+}
